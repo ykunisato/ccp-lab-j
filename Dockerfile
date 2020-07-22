@@ -2,16 +2,17 @@ FROM jupyter/datascience-notebook
 MAINTAINER "Yoshihiko Kunisato" ykunisato@psy.senshu-u.ac.jp
 
 USER root
-RUN conda update pip -y
 
-RUN apt-get update &&\
-    apt-get install -y xvfb firefox
-# Install PsychoPy(but not working now)
+# Install PsychoPy(not working now)
+# https://discourse.psychopy.org/t/running-psychopy-on-a-public-notebook-server-nosuchdisplayexception-cannot-connect-to-none/11538
+# RUN apt-get update &&\
+#    apt-get install -y x11-apps
+# ENV DISPLAY=localhost:0.0
+RUN conda update pip -y
 RUN pip install pyglet psychopy
 
-# Install MNE python
-# curl --remote-name https://raw.githubusercontent.com/mne-tools/mne-python/master/environment.yml
-# conda env update --file environment.yml
+# Install MNE python(https://mne.tools/stable/index.html) without 3D plotting and source analysis
+RUN pip install mne
 
 # Install cmdstan
 RUN mkdir /opt/cmdstan &&\

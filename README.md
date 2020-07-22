@@ -3,7 +3,8 @@
 This is a repository of Dockerfile for Jupyter notebook used in [Computational Clinical Psychology Lab](https://kunisatolab.github.io/english/index.html). This Dockerfile contains
 
 - Julia packages (ForwardDiff, LinearAlgebra, Optim, Gadfly, Plots, StatsPlots, DifferentialEquations, RDatasets, Distributions, StatsFuns, StatsBase, Distributions, Turing, Stan, StanOptimize, StanBase, StanVariational, StanDiagnose, CmdStan, StanSample, DiffEqBayes)
-- [psychopy](https://www.psychopy.org/)
+- [psychopy](https://www.psychopy.org/) But not working now for [NoSuchDisplayException Error](https://discourse.psychopy.org/t/running-psychopy-on-a-public-notebook-server-nosuchdisplayexception-cannot-connect-to-none/11538)
+- [MNE python](https://mne.tools/stable/index.html) without 3D plotting and source analysis
 
 Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 
