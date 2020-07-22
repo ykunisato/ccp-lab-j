@@ -14,10 +14,10 @@ Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 
 2. Open "terminal"(Mac) or Command Prompt(Win, I don't know Win. Sorry!)
 
-3. Type the following code to pull a Docker container. Change the "password" and "name_of_container" as you like.
+3. Type the following code to pull a Docker container. Change the "name" and "NotebookApp.token=" as you like.
 
 ```
-docker run -d --name notebook -v `pwd`:/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/notebook start-notebook.sh --NotebookApp.token="token that you set"
+docker run -d --name notebook -v `pwd`:/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/ccp-lab-j start-notebook.sh --NotebookApp.token="token that you set"
 ```
 
 4. Open the web browser and type "http://localhost:8888/" in the URL bar.
