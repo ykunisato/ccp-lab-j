@@ -2,13 +2,8 @@
 
 This is a repository of Dockerfile for Jupyter notebook used in [Computational Clinical Psychology Lab](https://kunisatolab.github.io/english/index.html). This Dockerfile contains
 
-- general modeling packages (rstan, rjags)
-- [cognitive modeling packages](https://hub.docker.com/r/ykunisato/cog-model-r)
-- [psychological networks modeling packages](https://hub.docker.com/r/ykunisato/psynet-r)
-- [network meta-analysis packages](https://hub.docker.com/r/ykunisato/netmeta-r)
-- EEG analysis packages([eegUtils](https://github.com/craddm/eegUtils).
-
-This Dockerfile is based on [ykunisato/paper-r](https://hub.docker.com/r/ykunisato/paper-r).
+- Julia packages (ForwardDiff, LinearAlgebra, Optim, Gadfly, Plots, StatsPlots, DifferentialEquations, RDatasets, Distributions, StatsFuns, StatsBase, Distributions, Turing, Stan, StanOptimize, StanBase, StanVariational, StanDiagnose, CmdStan, StanSample, DiffEqBayes)
+- [psychopy](https://www.psychopy.org/)
 
 Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 
@@ -21,9 +16,9 @@ Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 3. Type the following code to pull a Docker container. Change the "password" and "name_of_container" as you like.
 
 ```
-docker run -e PASSWORD=password -p 8787:8787 -v $PWD:/home/rstudio -d --name name_of_container ykunisato/ccp-lab-r
+docker run -d --name notebook -v `pwd`:/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/notebook start-notebook.sh --NotebookApp.token="token that you set"
 ```
 
-4. Open the web browser and type "http://localhost:8787/" in the URL bar.
+4. Open the web browser and type "http://localhost:8888/" in the URL bar.
 
-5. You will see the Rstudio on the web browser. Type rstudio in ID column and password that you set in password column.
+5. You will see the JupyterLab on the web browser. Type JupyterLab in token that you set.
