@@ -83,6 +83,6 @@ RUN conda install -c anaconda tensorflow-hub
 RUN conda install -c anaconda tensorflow-datasets
 RUN conda install -y pydot graphviz
 
-USER jovyan
+# USER jovyan
 # Install PsychRNN-v1.0.0-alpha
 RUN pip install psychrnn==1.0.0-alpha
