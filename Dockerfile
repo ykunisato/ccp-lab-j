@@ -15,7 +15,7 @@ RUN pip install pyglet psychopy
 RUN pip install mne
 
 # Install PsychRNN-v1.0.0-alpha
-RUN pip install psychrnn=1.0.0-alpha
+RUN pip install psychrnn
 
 # Install cmdstan
 RUN mkdir /opt/cmdstan &&\
