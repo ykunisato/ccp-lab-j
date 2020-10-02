@@ -14,6 +14,9 @@ RUN pip install pyglet psychopy
 # Install MNE python(https://mne.tools/stable/index.html) without 3D plotting and source analysis
 RUN pip install mne
 
+# Install PsychRNN-v1.0.0-alpha
+RUN pip install psychrnn=1.0.0-alpha
+
 # Install cmdstan
 RUN mkdir /opt/cmdstan &&\
     curl -L https://github.com/stan-dev/cmdstan/releases/download/v2.23.0/cmdstan-2.23.0.tar.gz | tar -z -x -C /opt/cmdstan --strip-components=1 &&\
