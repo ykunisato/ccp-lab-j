@@ -85,4 +85,4 @@ RUN conda install -y pydot graphviz
 
 USER jovyan
 # Install PsychRNN-v1.0.0-alpha
-RUN pip install psychrnn
+RUN pip install psychrnn==1.0.0-alpha
