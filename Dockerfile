@@ -74,7 +74,7 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("DiffEqBayes")' && \
     julia -e 'using Pkg; Pkg.add("StanMamba")'
 
-USER jovyan
+
 # install tensorflow
 RUN conda config --set channel_priority false
 RUN conda update --all
@@ -82,5 +82,6 @@ RUN conda install -c anaconda tensorflow-gpu
 RUN conda install -c anaconda tensorflow-hub
 RUN conda install -c anaconda tensorflow-datasets
 RUN conda install -y pydot graphviz
+
 # Install PsychRNN-v1.0.0-alpha
 RUN pip install psychrnn
