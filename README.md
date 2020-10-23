@@ -12,13 +12,26 @@ Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 
 1. Install ["Docker Desktop"](https://www.docker.com/products/docker-desktop)
 
-2. Open "terminal"(Mac) or Command Prompt(Win, I don't know Win. Sorry!)
+2. Open "terminal"(Mac) or "Command Prompt"(Windows)
 
 3. Type the following code to pull a Docker container. Change the "name" and "NotebookApp.token=" as you like.
+
+
+**terminal on Mac**
+
 
 ```
 docker run -d --name notebook -v `pwd`:/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/ccp-lab-j start-notebook.sh --NotebookApp.token="token that you set"
 ```
+
+
+**Command Prompt on Windows**
+
+
+```
+docker run -d --name notebook -v "%cd%":/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/ccp-lab-j start-notebook.sh --NotebookApp.token="token that you set"
+```
+
 
 4. Open the web browser and type "http://localhost:8888/" in the URL bar.
 
