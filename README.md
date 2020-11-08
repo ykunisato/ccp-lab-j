@@ -5,6 +5,8 @@ This is a repository of Dockerfile for Jupyter notebook used in [Computational C
 - Julia packages (ForwardDiff, LinearAlgebra, Optim, Gadfly, Plots, StatsPlots, DifferentialEquations, RDatasets, Distributions, StatsFuns, StatsBase, Distributions, Turing, Stan, StanOptimize, StanBase, StanVariational, StanDiagnose, CmdStan, StanSample, DiffEqBayes)
 - [psychopy](https://www.psychopy.org/) But not working now for [NoSuchDisplayException Error](https://discourse.psychopy.org/t/running-psychopy-on-a-public-notebook-server-nosuchdisplayexception-cannot-connect-to-none/11538)
 - [MNE python](https://mne.tools/stable/index.html) without 3D plotting and source analysis
+- [pyDDM](https://github.com/murraylab/PyDDM)
+- [PsychRNN](https://github.com/murraylab/PsychRNN)
 
 Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 
