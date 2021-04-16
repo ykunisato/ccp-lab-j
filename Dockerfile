@@ -14,6 +14,55 @@ RUN pip install pyglet psychopy
 # Install MNE python(https://mne.tools/stable/index.html) without 3D plotting and source analysis
 RUN pip install mne
 
+# Install Axelrod
+RUN pip install axelrod
+
+# Install Cartopy
+RUN conda install -c conda-forge cartopy
+
+# Install DEAP
+RUN pip install deap
+
+# Install japanize-matplotlib
+RUN pip install japanize-matplotlib
+
+# Install MeCab
+RUN pip install mecab-python3
+
+# Install UniDic
+RUN pip install unidic-lite
+
+# Install mlxtend
+RUN conda install mlxtend
+
+# Install mplfinance
+RUN pip install --upgrade mplfinance
+
+# Install NetworkX
+RUN pip install networkx
+
+# Install PuLP
+RUN pip install PuLP
+
+# Install pyaudio
+RUN conda install --channel https://conda.anaconda.org/anaconda pyaudio
+
+# Install pyMC3
+RUN conda install -c conda-forge pymc3
+
+# Install rpy2
+RUN conda install rpy2
+RUN conda install tzlocal
+
+# Install SimPy
+RUN pip install simpy
+
+# Install VPython
+RUN conda install -c vpython vpython
+
+# Install xlrd
+RUN conda install -c anaconda xlrd
+
 # Install cuda(https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.0/ubuntu20.04-x86_64/base/Dockerfile)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg2 curl ca-certificates && \
