@@ -45,6 +45,7 @@ RUN pip install networkx
 RUN pip install PuLP
 
 # Install pyaudio
+RUN conda update -n base conda
 RUN conda install --channel https://conda.anaconda.org/anaconda pyaudio
 
 # Install pyMC3
