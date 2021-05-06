@@ -139,6 +139,9 @@ RUN pip install psychrnn==1.0.0-alpha
 # Install pyDDM
 RUN pip install pyddm
 
+# install extentions
+RUN pip install jupyter_contrib_nbextensions
+
 # install jupyterlab_variableinspector
 RUN jupyter labextension install @lckr/jupyterlab_variableinspector
 
