@@ -138,3 +138,13 @@ RUN conda install -y pydot graphviz
 RUN pip install psychrnn==1.0.0-alpha
 # Install pyDDM
 RUN pip install pyddm
+
+# install jupyterlab_variableinspector
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector
+
+# install LaTeX environments for Jupyter notebook
+RUN jupyter nbextension install --py latex_envs [--user|--sys-prefix|--system]
+
+# install Scratchpad
+RUN jupyter nbextension install nbextension-scratchpad
+RUN jupyter nbextension enable nbextension-scratchpad/main
