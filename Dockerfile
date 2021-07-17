@@ -94,7 +94,7 @@ ENV NVIDIA_REQUIRE_CUDA "cuda>=11.0 brand=tesla,driver>=418,driver<419 brand=tes
 
 # Install cmdstan
 RUN mkdir /opt/cmdstan &&\
-    curl -L https://github.com/stan-dev/cmdstan/releases/download/v2.23.0/cmdstan-2.23.0.tar.gz | tar -z -x -C /opt/cmdstan --strip-components=1 &&\
+    curl -L https://github.com/stan-dev/cmdstan/releases/download/v2.27.0/cmdstan-2.27.0.tar.gz | tar -z -x -C /opt/cmdstan --strip-components=1 &&\
     cd /opt/cmdstan &&\
     make build
 ENV CMDSTAN_HOME /opt/cmdstan
