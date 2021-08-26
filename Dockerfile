@@ -126,12 +126,12 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
 
 
 # install tensorflow
-RUN conda config --set channel_priority false
-RUN conda update --all
-RUN conda install -c anaconda tensorflow-gpu
-RUN conda install -c anaconda tensorflow-hub
-RUN conda install -c anaconda tensorflow-datasets
-RUN conda install -y pydot graphviz
+# RUN conda config --set channel_priority false
+# RUN conda update --all
+# RUN conda install -c anaconda tensorflow-gpu
+# RUN conda install -c anaconda tensorflow-hub
+# RUN conda install -c anaconda tensorflow-datasets
+# RUN conda install -y pydot graphviz
 
 # USER jovyan
 # Install PsychRNN-v1.0.0-alpha
