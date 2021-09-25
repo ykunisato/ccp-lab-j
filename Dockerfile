@@ -1,8 +1,10 @@
 FROM jupyter/datascience-notebook
 LABEL maintainer="Yoshihiko Kunisato <kunisato@psy.senshu-u.ac.jp>"
 
-USER root
+# Install infer-actively 
+# RUN pip install inferactively-pymdp
 
+USER root
 # Install PsychoPy(not working now)
 # https://discourse.psychopy.org/t/running-psychopy-on-a-public-notebook-server-nosuchdisplayexception-cannot-connect-to-none/11538
 # RUN apt-get update &&\
@@ -141,9 +143,6 @@ RUN pip install pyddm
 
 # install extentions
 RUN pip install jupyter_contrib_nbextensions
-
-# Install infer-actively 
-# RUN pip install inferactively-pymdp
 
 # install jupyterlab_variableinspector
 # RUN jupyter labextension install @lckr/jupyterlab_variableinspector
