@@ -142,8 +142,8 @@ RUN pip install pyddm
 RUN pip install jupyter_contrib_nbextensions
 
 # Install infer-actively 
-USER jovyan
-RUN python -m pip install inferactively-pymdp
+# USER jovyan
+# RUN python -m pip install inferactively-pymdp
 
 # install jupyterlab_variableinspector
 # RUN jupyter labextension install @lckr/jupyterlab_variableinspector
