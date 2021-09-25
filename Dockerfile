@@ -2,7 +2,7 @@ FROM jupyter/datascience-notebook
 LABEL maintainer="Yoshihiko Kunisato <kunisato@psy.senshu-u.ac.jp>"
 
 # Install infer-actively 
-# RUN pip install inferactively-pymdp
+RUN python -m pip install inferactively-pymdp
 
 USER root
 # Install PsychoPy(not working now)
