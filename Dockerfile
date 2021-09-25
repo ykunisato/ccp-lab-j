@@ -11,6 +11,9 @@ USER root
 RUN conda update pip -y
 RUN pip install pyglet psychopy
 
+# Install infer-actively 
+RUN pip install inferactively-pymdp
+
 # Install MNE python(https://mne.tools/stable/index.html) without 3D plotting and source analysis
 RUN pip install mne
 
