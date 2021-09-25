@@ -1,9 +1,6 @@
 FROM jupyter/datascience-notebook
 LABEL maintainer="Yoshihiko Kunisato <kunisato@psy.senshu-u.ac.jp>"
 
-# Install infer-actively 
-RUN python -m pip install inferactively-pymdp
-
 USER root
 # Install PsychoPy(not working now)
 # https://discourse.psychopy.org/t/running-psychopy-on-a-public-notebook-server-nosuchdisplayexception-cannot-connect-to-none/11538
@@ -12,6 +9,9 @@ USER root
 # ENV DISPLAY=localhost:0.0
 RUN conda update pip -y
 RUN pip install pyglet psychopy
+
+# Install infer-actively 
+RUN python -m pip install inferactively-pymdp
 
 # Install MNE python(https://mne.tools/stable/index.html) without 3D plotting and source analysis
 RUN pip install mne
