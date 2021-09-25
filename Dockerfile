@@ -11,9 +11,6 @@ USER root
 RUN conda update pip -y
 RUN pip install pyglet psychopy
 
-# Install infer-actively 
-RUN pip install inferactively-pymdp
-
 # Install MNE python(https://mne.tools/stable/index.html) without 3D plotting and source analysis
 RUN pip install mne
 
@@ -144,6 +141,9 @@ RUN pip install pyddm
 
 # install extentions
 RUN pip install jupyter_contrib_nbextensions
+
+# Install infer-actively 
+RUN pip install inferactively-pymdp
 
 # install jupyterlab_variableinspector
 # RUN jupyter labextension install @lckr/jupyterlab_variableinspector
