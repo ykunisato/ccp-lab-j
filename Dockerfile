@@ -143,12 +143,13 @@ RUN pip install pyddm
 # install extentions
 RUN pip install jupyter_contrib_nbextensions
 
-# Install infer-actively 
-RUN pip install --user jovyan inferactively-pymdp
-
 # install jupyterlab_variableinspector
 RUN jupyter labextension install @lckr/jupyterlab_variableinspector@3.0.7
 RUN jupyter nbextension enable @lckr/jupyterlab_variableinspector/main
+
+# Install infer-actively 
+USER jovyan
+RUN pip install inferactively-pymdp
 
 # install LaTeX environments for Jupyter notebook
 # RUN jupyter nbextension install --py latex_envs [--user|--sys-prefix|--system]
