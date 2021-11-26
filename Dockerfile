@@ -111,7 +111,6 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("Distributions")' && \
     julia -e 'using Pkg; Pkg.add("StatsFuns")'&& \
     julia -e 'using Pkg; Pkg.add("StatsBase")' && \
-    julia -e 'using Pkg; Pkg.add("Distributions")'&& \
     julia -e 'using Pkg; Pkg.add("Turing")' && \
     julia -e 'using Pkg; Pkg.add("Stan")' && \
     julia -e 'using Pkg; Pkg.add("StanOptimize")' && \
@@ -121,6 +120,9 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("CmdStan")' && \
     julia -e 'using Pkg; Pkg.add("StanSample")' && \
     julia -e 'using Pkg; Pkg.add("DiffEqBayes")' && \
+    julia -e 'using Pkg; Pkg.add("ParameterizedFunctions")' && \
+    julia -e 'using Pkg; Pkg.add("CPUTime")' && \
+    julia -e 'using Pkg; Pkg.add("ForneyLab")' && \
     julia -e 'using Pkg; Pkg.add("StanMamba")'
 
 
@@ -142,12 +144,11 @@ RUN pip install pyddm
 RUN pip install jupyter_contrib_nbextensions
 
 # Install infer-actively 
-# USER jovyan
-# RUN python -m pip install inferactively-pymdp
+RUN pip install --user jovyan inferactively-pymdp
 
 # install jupyterlab_variableinspector
-# RUN jupyter labextension install @lckr/jupyterlab_variableinspector
-# RUN jupyter nbextension enable @lckr/jupyterlab_variableinspector/main
+RUN jupyter labextension install @lckr/jupyterlab_variableinspector@3.0.7
+RUN jupyter nbextension enable @lckr/jupyterlab_variableinspector/main
 
 # install LaTeX environments for Jupyter notebook
 # RUN jupyter nbextension install --py latex_envs [--user|--sys-prefix|--system]
