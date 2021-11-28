@@ -123,6 +123,7 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("ParameterizedFunctions")' && \
     julia -e 'using Pkg; Pkg.add("CPUTime")' && \
     julia -e 'using Pkg; Pkg.add("ForneyLab")' && \
+    julia -e 'using Pkg; Pkg.add("PyPlot")' && \
     julia -e 'using Pkg; Pkg.add("StanMamba")'
 
 
