@@ -142,6 +142,7 @@ RUN pip install psychrnn==1.0.0-alpha
 RUN pip install pyddm
 
 # install extentions
+RUN pip install jupyterlab-git
 RUN pip install jupyter_contrib_nbextensions
 
 # install jupyterlab_variableinspector
