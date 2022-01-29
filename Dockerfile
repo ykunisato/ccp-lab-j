@@ -124,6 +124,7 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("CPUTime")' && \
     julia -e 'using Pkg; Pkg.add("ForneyLab")' && \
     julia -e 'using Pkg; Pkg.add("PyPlot")' && \
+    julia -e 'using Pkg; Pkg.add("https://github.com/sqwayer/BridgeSampling.jl")' && \
     julia -e 'using Pkg; Pkg.add("StanMamba")'
 
 
