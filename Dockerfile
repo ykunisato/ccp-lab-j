@@ -67,52 +67,65 @@ ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
 
 # Install julia Pkg
+## Stats
 RUN julia -e 'using Pkg; Pkg.update()' && \
-    julia -e 'using Pkg; Pkg.add("BAT")' && \
-    julia -e 'using Pkg; Pkg.add("ForwardDiff")' && \
-    julia -e 'using Pkg; Pkg.add("CalculusWithJulia")' && \
-    julia -e 'using Pkg; Pkg.add("LinearAlgebra")' && \
-    julia -e 'using Pkg; Pkg.add("DecisionTree")' && \
-    julia -e 'using Pkg; Pkg.add("Optim")' && \
+    julia -e 'using Pkg; Pkg.add("CPUTime")' && \
+    julia -e 'using Pkg; Pkg.add("Distributions")' && \
     julia -e 'using Pkg; Pkg.add("Gadfly")' && \
     julia -e 'using Pkg; Pkg.add("GLM")' && \
-    julia -e 'using Pkg; Pkg.add("MLJ")' && \
-    julia -e 'using Pkg; Pkg.add("LIBSVM")' && \
-    julia -e 'using Pkg; Pkg.add("MLJModels")' && \
+    julia -e 'using Pkg; Pkg.add("Optim")' && \
     julia -e 'using Pkg; Pkg.add("Plots")' && \
-    julia -e 'using Pkg; Pkg.add("StatsPlots")' && \
-    julia -e 'using Pkg; Pkg.add("SpecialFunctions")' && \
-    julia -e 'using Pkg; Pkg.add("Query")' && \
-    julia -e 'using Pkg; Pkg.add("DifferentialEquations")' && \
-    julia -e 'using Pkg; Pkg.add("RDatasets")' && \
-    julia -e 'using Pkg; Pkg.add("Distributions")' && \
-    julia -e 'using Pkg; Pkg.add("StatsFuns")'&& \
-    julia -e 'using Pkg; Pkg.add("StatsBase")' && \
-    julia -e 'using Pkg; Pkg.add("Turing")' && \
-    julia -e 'using Pkg; Pkg.add("MCMCChains")' && \
-    julia -e 'using Pkg; Pkg.add("AdvancedHMC")' && \
-    julia -e 'using Pkg; Pkg.add("DistributionsAD")' && \
-    julia -e 'using Pkg; Pkg.add("Bijectors")' && \
-    julia -e 'using Pkg; Pkg.add("Soss")' && \
-    julia -e 'using Pkg; Pkg.add("MeasureTheory")' && \
-    julia -e 'using Pkg; Pkg.add("StatisticalRethinking")' && \
-    julia -e 'using Pkg; Pkg.add("Stan")' && \
-    julia -e 'using Pkg; Pkg.add("StanOptimize")' && \
-    julia -e 'using Pkg; Pkg.add("StanBase")' && \
-    julia -e 'using Pkg; Pkg.add("StanVariational")' && \
-    julia -e 'using Pkg; Pkg.add("StanDiagnose")' && \
-    julia -e 'using Pkg; Pkg.add("CmdStan")' && \
-    julia -e 'using Pkg; Pkg.add("StanSample")' && \
-    julia -e 'using Pkg; Pkg.add("ScikitLearn")' && \
-    julia -e 'using Pkg; Pkg.add("DiffEqBayes")' && \
-    julia -e 'using Pkg; Pkg.add("ParameterizedFunctions")' && \
-    julia -e 'using Pkg; Pkg.add("ReinforcementLearning")' && \
-    julia -e 'using Pkg; Pkg.add("CPUTime")' && \
-    julia -e 'using Pkg; Pkg.add("ForneyLab")' && \
-    julia -e 'using Pkg; Pkg.add("PyPlot")' && \
     julia -e 'using Pkg; Pkg.add("PyCall")' && \
-    julia -e 'using Pkg; Pkg.add("StanMamba")'
+    julia -e 'using Pkg; Pkg.add("PyPlot")' && \
+    julia -e 'using Pkg; Pkg.add("Query")' && \
+    julia -e 'using Pkg; Pkg.add("RDatasets")' && \
+    julia -e 'using Pkg; Pkg.add("SpecialFunctions")' && \
+    julia -e 'using Pkg; Pkg.add("StatisticalRethinking")' && \
+    julia -e 'using Pkg; Pkg.add("StatsBase")' && \
+    julia -e 'using Pkg; Pkg.add("StatsFuns")'&& \
+    julia -e 'using Pkg; Pkg.add("StatsPlots")'
 
+# stan and turing
+RUN julia -e 'using Pkg; Pkg.update()' && \
+    julia -e 'using Pkg; Pkg.add("AdvancedHMC")' && \
+    julia -e 'using Pkg; Pkg.add("BAT")' && \
+    julia -e 'using Pkg; Pkg.add("Bijectors")' && \
+    julia -e 'using Pkg; Pkg.add("CmdStan")' && \
+    julia -e 'using Pkg; Pkg.add("DiffEqBayes")' && \
+    julia -e 'using Pkg; Pkg.add("DistributionsAD")' && \
+    julia -e 'using Pkg; Pkg.add("ForwardDiff")' && \
+    julia -e 'using Pkg; Pkg.add("MCMCChains")' && \
+    julia -e 'using Pkg; Pkg.add("MeasureTheory")' && \
+    julia -e 'using Pkg; Pkg.add("ParameterizedFunctions")' && \
+    julia -e 'using Pkg; Pkg.add("Soss")' && \
+    julia -e 'using Pkg; Pkg.add("Stan")' && \
+    julia -e 'using Pkg; Pkg.add("StanBase")' && \
+    julia -e 'using Pkg; Pkg.add("StanDiagnose")' && \
+    julia -e 'using Pkg; Pkg.add("StanMamba")' && \
+    julia -e 'using Pkg; Pkg.add("StanOptimize")' && \
+    julia -e 'using Pkg; Pkg.add("StanSample")' && \
+    julia -e 'using Pkg; Pkg.add("StanVariational")' && \
+    julia -e 'using Pkg; Pkg.add("Turing")'
+
+
+# ML
+RUN julia -e 'using Pkg; Pkg.update()' && \
+    julia -e 'using Pkg; Pkg.add("DecisionTree")' && \
+    julia -e 'using Pkg; Pkg.add("LIBSVM")' && \
+    julia -e 'using Pkg; Pkg.add("MLJ")' && \
+    julia -e 'using Pkg; Pkg.add("MLJModels")' && \
+    julia -e 'using Pkg; Pkg.add("ReinforcementLearning")' && \
+    julia -e 'using Pkg; Pkg.add("ScikitLearn")'
+
+# ODE
+RUN julia -e 'using Pkg; Pkg.update()' && \
+    julia -e 'using Pkg; Pkg.add("CalculusWithJulia")' && \
+    julia -e 'using Pkg; Pkg.add("LinearAlgebra")' && \
+    julia -e 'using Pkg; Pkg.add("DifferentialEquations")'
+    
+# Active Inference
+RUN julia -e 'using Pkg; Pkg.update()' && \
+    julia -e 'using Pkg; Pkg.add("ForneyLab")'
 
 # install extentions
 RUN pip install jupyterlab-git
