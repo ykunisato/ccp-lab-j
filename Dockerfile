@@ -86,8 +86,7 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("StatsPlots")'
 
 # stan and turing
-RUN julia -e 'using Pkg; Pkg.update()' && \
-    julia -e 'using Pkg; Pkg.add("AdvancedHMC")' && \
+RUN julia -e 'using Pkg; Pkg.add("AdvancedHMC")' && \
     julia -e 'using Pkg; Pkg.add("BAT")' && \
     julia -e 'using Pkg; Pkg.add("Bijectors")' && \
     julia -e 'using Pkg; Pkg.add("CmdStan")' && \
@@ -98,19 +97,10 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("MeasureTheory")' && \
     julia -e 'using Pkg; Pkg.add("ParameterizedFunctions")' && \
     julia -e 'using Pkg; Pkg.add("Soss")' && \
-    julia -e 'using Pkg; Pkg.add("Stan")' && \
-    julia -e 'using Pkg; Pkg.add("StanBase")' && \
-    julia -e 'using Pkg; Pkg.add("StanDiagnose")' && \
-    julia -e 'using Pkg; Pkg.add("StanMamba")' && \
-    julia -e 'using Pkg; Pkg.add("StanOptimize")' && \
-    julia -e 'using Pkg; Pkg.add("StanSample")' && \
-    julia -e 'using Pkg; Pkg.add("StanVariational")' && \
     julia -e 'using Pkg; Pkg.add("Turing")'
 
-
 # ML
-RUN julia -e 'using Pkg; Pkg.update()' && \
-    julia -e 'using Pkg; Pkg.add("DecisionTree")' && \
+RUN julia -e 'using Pkg; Pkg.add("DecisionTree")' && \
     julia -e 'using Pkg; Pkg.add("LIBSVM")' && \
     julia -e 'using Pkg; Pkg.add("MLJ")' && \
     julia -e 'using Pkg; Pkg.add("MLJModels")' && \
@@ -118,14 +108,12 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("ScikitLearn")'
 
 # ODE
-RUN julia -e 'using Pkg; Pkg.update()' && \
-    julia -e 'using Pkg; Pkg.add("CalculusWithJulia")' && \
+RUN julia -e 'using Pkg; Pkg.add("CalculusWithJulia")' && \
     julia -e 'using Pkg; Pkg.add("LinearAlgebra")' && \
     julia -e 'using Pkg; Pkg.add("DifferentialEquations")'
     
 # Active Inference
-RUN julia -e 'using Pkg; Pkg.update()' && \
-    julia -e 'using Pkg; Pkg.add("ForneyLab")'
+RUN julia -e 'using Pkg; Pkg.add("ForneyLab")'
 
 # install extentions
 RUN pip install jupyterlab-git
