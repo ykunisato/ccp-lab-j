@@ -79,7 +79,9 @@ RUN julia -e 'using Pkg; Pkg.add("Turing")'
 ## ODE
 RUN julia -e 'using Pkg; Pkg.add("CalculusWithJulia")'
 RUN julia -e 'using Pkg; Pkg.add("LinearAlgebra")'
-RUN julia -e 'using Pkg; Pkg.add("DifferentialEquations")'  
+RUN julia -e 'using Pkg; Pkg.add("DifferentialEquations")' 
+RUN julia -e 'using Pkg; Pkg.add("Roots")' 
+RUN julia -e 'using Pkg; Pkg.add("SymPy")' 
 ## Active Inference
 RUN julia -e 'using Pkg; Pkg.add("ForneyLab")'
 
