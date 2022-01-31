@@ -45,26 +45,26 @@ RUN pip install pyddm
 RUN conda install mlxtend
 
 # Install cuda(https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.0/ubuntu20.04-x86_64/base/Dockerfile)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gnupg2 curl ca-certificates && \
-    curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub | apt-key add - && \
-    echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64 /" > /etc/apt/sources.list.d/cuda.list && \
-    apt-get purge --autoremove -y curl \
-    && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y --no-install-recommends \
+#    gnupg2 curl ca-certificates && \
+#    curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub | apt-key add - && \
+#    echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64 /" > /etc/apt/sources.list.d/cuda.list && \
+#    apt-get purge --autoremove -y curl \
+#    && rm -rf /var/lib/apt/lists/*
 
 # For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    cuda-cudart-11-0=11.0.221-1 \
-    cuda-compat-11-0 \
-    && ln -s cuda-11.0 /usr/local/cuda && \
-    rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y --no-install-recommends \
+#    cuda-cudart-11-0=11.0.221-1 \
+#    cuda-compat-11-0 \
+#    && ln -s cuda-11.0 /usr/local/cuda && \
+#    rm -rf /var/lib/apt/lists/*
 
 # Required for nvidia-docker v1
-RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
-    echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
+#RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
+#    echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
 
-ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
-ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+#ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
+#ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
 
 # Install julia Pkg
 ## Stats
@@ -84,8 +84,7 @@ RUN julia -e 'using Pkg; Pkg.update()' && \
     julia -e 'using Pkg; Pkg.add("StatsBase")' && \
     julia -e 'using Pkg; Pkg.add("StatsFuns")'&& \
     julia -e 'using Pkg; Pkg.add("StatsPlots")'
-
-# stan and turing
+## stan and turing
 RUN julia -e 'using Pkg; Pkg.add("AdvancedHMC")' && \
     julia -e 'using Pkg; Pkg.add("BAT")' && \
     julia -e 'using Pkg; Pkg.add("Bijectors")' && \
@@ -98,21 +97,11 @@ RUN julia -e 'using Pkg; Pkg.add("AdvancedHMC")' && \
     julia -e 'using Pkg; Pkg.add("ParameterizedFunctions")' && \
     julia -e 'using Pkg; Pkg.add("Soss")' && \
     julia -e 'using Pkg; Pkg.add("Turing")'
-
-# ML
-RUN julia -e 'using Pkg; Pkg.add("DecisionTree")' && \
-    julia -e 'using Pkg; Pkg.add("LIBSVM")' && \
-    julia -e 'using Pkg; Pkg.add("MLJ")' && \
-    julia -e 'using Pkg; Pkg.add("MLJModels")' && \
-    julia -e 'using Pkg; Pkg.add("ReinforcementLearning")' && \
-    julia -e 'using Pkg; Pkg.add("ScikitLearn")'
-
-# ODE
+## ODE
 RUN julia -e 'using Pkg; Pkg.add("CalculusWithJulia")' && \
     julia -e 'using Pkg; Pkg.add("LinearAlgebra")' && \
-    julia -e 'using Pkg; Pkg.add("DifferentialEquations")'
-    
-# Active Inference
+    julia -e 'using Pkg; Pkg.add("DifferentialEquations")'  
+## Active Inference
 RUN julia -e 'using Pkg; Pkg.add("ForneyLab")'
 
 # install extentions
