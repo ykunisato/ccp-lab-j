@@ -24,11 +24,11 @@ RUN pip3 install jupyterlab-git \
 # Install Julia
 ARG JULIA_VERSION="1.7.2"
 RUN JULIA_MAJOR=`echo $JULIA_VERSION | sed -E  "s/\.[0-9]+$//g"` && \
-    wget https://julialang-s3.julialang.org/bin/linux/x64/$JULIA_MAJOR/julia-$JULIA_VERSION-linux-x86_64.tar.gz && \
-    tar -xvzf julia-$JULIA_VERSION-linux-x86_64.tar.gz && \
+    wget https://julialang-s3.julialang.org/bin/linux/aarch64/$JULIA_MAJOR/julia-$JULIA_VERSION-linux-aarch64.tar.gz && \
+    tar -xvzf julia-$JULIA_VERSION-linux-aarch64.tar.gz && \
     cp -r julia-$JULIA_VERSION /opt/ && \
     ln -s /opt/julia-$JULIA_VERSION/bin/julia /usr/local/bin/julia && \
-    rm -r julia-$JULIA_VERSION-linux-x86_64.tar.gz
+    rm -r julia-$JULIA_VERSION-linux-aarch64.tar.gz
 
 # Insatall Julia package
 USER jovyan
