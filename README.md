@@ -26,6 +26,12 @@ Maintainer is Yoshihiko Kunisato (ykunisato@psy.senshu-u.ac.jp)
 docker run -d --name notebook -v `pwd`:/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/ccp-lab-j start-notebook.sh --NotebookApp.token="token that you set"
 ```
 
+**terminal on Mac(Apple Silicon)**
+
+```
+docker run -d --name notebook -v `pwd`:/home/jovyan/work -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes ykunisato/ccp-lab-j:m1-julia1-7-2 start-notebook.sh --NotebookApp.token="token that you set"
+```
+
 
 **Command Prompt on Windows**
 
