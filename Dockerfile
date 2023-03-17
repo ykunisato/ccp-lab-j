@@ -1,9 +1,20 @@
 FROM jupyter/scipy-notebook
 LABEL maintainer="Yoshihiko Kunisato <kunisato@psy.senshu-u.ac.jp>"
 
-## Install Python module
-USER root
-RUN pip3 install jupyterlab-git \
+RRUN apt -y update && apt -y upgrade
+RUN apt install -y wget \
+    git
+
+# Intall Python packages
+RUN pip3 install notebook \
+    jupyterlab \
+    jupyterlab-git \
+    jupyter_contrib_nbextensions \
+    lckr-jupyterlab-variableinspector \
+    scipy \
+    seaborn \
+    scikit-learn \
+    sympy \
     mne \
     axelrod \
     deap \
@@ -17,7 +28,8 @@ RUN pip3 install jupyterlab-git \
     psychrnn \
     pyddm \
     inferactively-pymdp\
-    bokeh
+    bokeh \
+    sudachipy
 
 # Install Julia
 ARG JULIA_VERSION="1.8.5"
