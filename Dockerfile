@@ -1,7 +1,7 @@
 FROM jupyter/scipy-notebook
 LABEL maintainer="Yoshihiko Kunisato <kunisato@psy.senshu-u.ac.jp>"
 
-RRUN apt -y update && apt -y upgrade
+RUN apt -y update && apt -y upgrade
 RUN apt install -y wget \
     git
 
